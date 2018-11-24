@@ -1,6 +1,6 @@
 > A simple Laravel / Vue.js app, converting statistics from mymedela-App to a Highchart Heatmap.
 
-![Screenshot HighChart](screenshor-chart.png)
+![Screenshot HighChart](screenshot-chart.png)
 
 ## Instructions
 If you want to run this project, just install all dependencies and import your own mymedela.xlsx export
