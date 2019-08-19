@@ -32,7 +32,7 @@ class PageController extends Controller
                     session(['error' => true, 'message' => $e->getMessage()]);
                     return false;
                 }
-             
+
                 $stats = collect([]);
                 $chart_data = [];
                 $min_date = "";
@@ -101,13 +101,20 @@ class PageController extends Controller
 
     public function index()
     {
-        $this->check_for_data();
+        $result = $this->check_for_data();
 
-        if (session('error')) {
+        if ($result == false) {
+            return view('index');
+        }
+
+        if (session('error') == "true") {
             session(['alerttype' => 'warning']);
-        } else {
+        }
+        if (session('error') == "false") {
             session(['message' => 'Upload successful']);
             session(['alerttype' => 'success']);
+        } else {
+
         }
 
         return view('index');
